@@ -17,17 +17,17 @@ function startGame(){
   let tentatives = 5;
 
   commentaire.innerHTML =`vous avez ${tentatives} tentatives pour essayer de deviner un nombre compris entre 1 et 100.`;
-  while(tentatives > 0 && essaie != nbreAleatoire){
+  while(tentatives > 0 || parseInt(essaie) != nbreAleatoire){
     essaie.innerHTML = "";
     valider.addEventListener("click", function(){
         tentatives--;
-        if(essaie === nbreAleatoire && tentatives != 0){
+        if(parseInt(essaie) === nbreAleatoire && tentatives != 0){
             let count = 5 - tentatives;
             commentaire.innerHTML = `Felicitation, Vous avez trouver le nombre en ${count} tentatives `;
             return;
-        }else if(essaie != nbreAleatoire && tentatives != 0){
+        }else if(parseInt(essaie) != nbreAleatoire && tentatives != 0){
             commentaire.innerHTML =`il vous reste ${tentatives} tentatives.`;
-        }else{
+        }else if(parseInt(essaie) != nbreAleatoire && tentatives === 0){
             commentaire.innerHTML = `Vous avez perdu... le nombre aleatoire etait ${nbreAleatoire}`;
         }
     })

@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+#content{
+    margin: 150px;
+    padding: 15px;
+    background-color: beige;
+    border-radius: 35px;
+    text-align: center;
+}
+h2{
+    font-size: 25px;
+}
+button{
+    width: 300px;
+    height: 50px;
+    background-color: green;
+    color: azure;
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: 2px 3px 2px;
+    margin: 7px;
+}
+button:hover{
+    background-color: rgb(71, 255, 47);
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+    border-radius: 4px;
+    box-shadow: 5px 6px 5px;
+}
+#essaie{
+    width: 180px;
+    height: 40px;
+    margin-right: 0px;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+}
+#valider{
+    width: 115px;
+    height: 40px;
+    margin-left: 0px;
+    font-size: 18px;
+}
+#commentaire{
+    font-family: poppins;
+    margin: 7px;
+}

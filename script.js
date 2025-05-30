@@ -9,10 +9,28 @@ const commentaire = document.getElementById("commentaire");
 jeu.style.display = "none";
 
 function startGame(){
+    essaie.innerHTML = "";
   jeu.style.display = "inline";  
-  commencer.type= "reset";
   commencer.innerHTML= "Recommencer";
+
+  let nbreAleatoire = Math.floor(Math.random() * (max)) + min;
+  let tentatives = 5;
+
+  commentaire.innerHTML =`vous avez ${tentatives} tentatives pour essayer de deviner un nombre compris entre 1 et 100.`;
+  while(tentatives > 0 && essaie != nbreAleatoire){
+    essaie.innerHTML = "";
+    valider.addEventListener("click", function(){
+        tentatives--;
+        if(essaie === nbreAleatoire && tentatives != 0){
+            let count = 5 - tentatives;
+            commentaire.innerHTML = `Felicitation, Vous avez trouver le nombre en ${count} tentatives `;
+            return;
+        }else if(essaie != nbreAleatoire && tentatives != 0){
+            commentaire.innerHTML =`il vous reste ${tentatives} tentatives.`;
+        }else{
+            commentaire.innerHTML = `Vous avez perdu... le nombre aleatoire etait ${nbreAleatoire}`;
+        }
+    })
+  }
 }
-let entierAleatoire = Math.floor(Math.random() * (max)) + min;
-console.log(entierAleatoire);
 commencer.addEventListener("click", startGame);
